@@ -29,16 +29,29 @@ public class List {
 			aktuellerHead = aktuellerHead.address;
 		}
 	}
+	
+	public void elemlöschen(int i) {
+		Elem el = head;
+		while(el.address != null && el.zahl != 0) {
+			el.address = null;
+		}
+	}
 
 	public static void main(String[] args) {
 		
-		List element1 = new List(3);
-		List element2 = new List(4);
-		element1.elemhinzufügen(5);
-		element1.listeAusgeben();
-		element2.listeAusgeben();
-		element1.listenlänge();
-		element2.listenlänge();
+		List liste1 = new List(3);
+		List liste2 = new List(4);
+		//weiteres Element hinzufügen
+		liste1.elemhinzufügen(5);
+		System.out.println("Listen ausgeben:");
+		liste1.listeAusgeben();
+		liste2.listeAusgeben();
+		System.out.println("länge der Liste ausgeben:");
+		liste1.listenlänge();
+		liste2.listenlänge();
+		System.out.println("Element löschen und länge anschließend wieder ausgeben:");
+		liste1.elemlöschen(5);
+		liste1.listenlänge();
 	}
 
 }
